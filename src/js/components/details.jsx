@@ -27,8 +27,6 @@ export default class Details extends React.Component{
       return(
         <div>
             <div style={{ fontSize: '4em', padding: '0.5em'}} onClick={()=> browserHistory.goBack()}> &#8592; Back </div>
-
-            </div>
         </div>
 
       )

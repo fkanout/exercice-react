@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Hero = ({heroData, heroClicked}) =>{
-    console.log(heroData);
     return <div onClick={()=>heroClicked(heroData.id)} style={{ margin:'20px', width:'220px', height:'220px', background: '#f1f1f1', display:'flex', flexDirection:'column' }} key={heroData.id} >
             <img 
                 style={{ width:'200px', height:'200px', margin: '10px'}} 

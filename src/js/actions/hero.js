@@ -51,10 +51,10 @@ export const HeroActions = {
           hash: hash
         },
         dataType: 'json',
-      }).then(heroList =>{
+      }).then(heroDetails =>{
            mainDispatcher.dispatch({
             action: Constant.HEROS.DETAILS_FETCHED,
-            content: heroList.data.results
+            content: heroDetails.data.results[0]
         });
       })
   },

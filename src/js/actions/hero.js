@@ -36,8 +36,27 @@ export const HeroActions = {
   
   },
 
-  clearList() {
-    console.warn('clearList action not yet implemented...');
+  fetchDetails(characterId) {
+      const timeStamp = new Date();
+      const strToHash = timeStamp + API_PRIVATE + API_PUBLIC;
+      const hash = crypto.createHash('md5').update(strToHash).digest('hex')
+      $.ajax({
+        url: `${URL}/v1/public/characters/${characterId}`,
+        cache: true,
+        crossDomain: true,
+        type: 'GET',
+        data: {
+          ts: timeStamp,
+          apikey: API_PUBLIC,
+          hash: hash
+        },
+        dataType: 'json',
+      }).then(heroList =>{
+           mainDispatcher.dispatch({
+            action: Constant.HEROS.DETAILS_FETCHED,
+            content: heroList.data.results
+        });
+      })
   },
 
   completeTask(task) {

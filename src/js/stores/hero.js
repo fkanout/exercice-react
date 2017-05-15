@@ -9,6 +9,7 @@ class HeroStore extends EventEmitter {
   constructor() {
     super();
     this.heros = {};
+    this.heroDetails = {};
 
   }
 
@@ -32,6 +33,13 @@ class HeroStore extends EventEmitter {
    return this.heros;
   }
 
+  setHeroDetails(heroDetails){
+    this.heroDetails = Object.assign(...{}, {heroDetails})
+    console.log(this.heroDetails)
+  }
+
+
+
 
 }
 export const heroStore = new HeroStore();
@@ -40,6 +48,8 @@ heroStore.dispatchToken = mainDispatcher.register(function(payload){
 	switch (payload.action){
         case Constant.HEROS.FETCHED:
           heroStore.setHeros(payload.content)
+        case Constant.HEROS.DETAILS_FETCHED:
+          heroStore.setHeroDetails(payload.content)
         default:
           break;
     }

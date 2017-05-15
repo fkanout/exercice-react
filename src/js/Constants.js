@@ -1,7 +1,6 @@
-import keyMirror from 'react/lib/keyMirror';
-
 export default {
   HEROS: {
-    FETCHED: "HEROS_FETCHED"
+    FETCHED: "HEROS_FETCHED",
+    DETAILS_FETCHED: "DETAILS_FETCHED"
   }
 };

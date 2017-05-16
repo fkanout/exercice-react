@@ -57,9 +57,5 @@ export const HeroActions = {
             content: heroDetails.data.results[0]
         });
       })
-  },
-
-  completeTask(task) {
-    console.warn('completeTask action not yet implemented...', task);
   }
 };

@@ -23,7 +23,9 @@
   "scripts": {
     "dev": "gulp --type dev",
     "start": "gulp",
-    "build": "gulp build"
+    "build": "gulp build",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
@@ -47,8 +49,10 @@
     "gulp-eslint": "^3.0.1",
     "jquery": "^3.2.1",
     "object-assign": "^4.1.1",
-     "react": "15.5.4",
+    "react": "15.5.4",
     "react-dom": "15.5.4",
-    "react-router": "3.0.5"
-  }
+    "react-router": "3.0.5",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
